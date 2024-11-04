@@ -1,0 +1,220 @@
+/* Reset and Basic Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+/* Background Video Styling */
+.videoFondo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+.videoFondo video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Navigation Styling */
+nav {
+    width: 100vw;
+    height: 15vh;
+    display: flex;
+    background-color: rgba(0, 128, 128, 0.9);
+    z-index: 10;
+    position: relative;
+}
+
+.nav1, .nav2, .nav3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav1 {
+    width: 33vw;
+}
+
+.nav2 {
+    width: 34vw;
+}
+
+.nav3 {
+    width: 33vw;
+    position: relative;
+}
+
+.nav2 i {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    cursor: pointer;
+}
+
+/* Custom Menu Icon Styling */
+.menu-icon {
+    display: none; /* Hidden by default, shown on tablet/mobile */
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+    position: relative;
+}
+
+.menu-icon span {
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background-color: white;
+    border-radius: 2px;
+    transition: 0.3s ease;
+}
+
+.menu-icon span:nth-child(1) { top: 0; }
+.menu-icon span:nth-child(2) { top: 10px; }
+.menu-icon span:nth-child(3) { top: 20px; }
+
+.menu-icon.active span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 10px;
+}
+
+.menu-icon.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-icon.active span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 10px;
+}
+
+/* Default Horizontal Menu */
+.menu-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.menu-links li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Section Styling */
+section {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* Desktop, Tablet, and Mobile View Modes */
+.desktop-mode .menu-icon {
+    display: none; /* Hide burger menu icon in desktop mode */
+}
+
+.desktop-mode .menu-links {
+    display: flex; /* Show default menu in desktop mode */
+}
+
+.tablet-mode .menu-icon,
+.mobile-mode .menu-icon {
+    display: block; /* Show burger menu icon in tablet and mobile mode */
+}
+
+.tablet-mode .menu-links,
+.mobile-mode .menu-links {
+    display: none; /* Hide default menu in tablet and mobile mode */
+}
+
+/* Dropdown Menu Style for Tablet and Mobile in Class-Based Mode */
+.menu-links.show {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 128, 128, 0.95);
+    position: fixed; /* Use fixed position to cover the screen */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh; /* Cover full height */
+    padding: 2rem 0;
+    text-align: center;
+    z-index: 1000; /* Very high z-index to ensure visibility */
+}
+
+.menu-links.show li {
+    width: 100%;
+}
+
+.menu-links.show li a {
+    display: block;
+    padding: 1rem 0; /* Adjust padding for better visibility */
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Tablet and Mobile Styles Using Media Queries */
+@media (max-width: 1024px) {
+    /* Show burger menu icon */
+    .menu-icon {
+        display: block;
+    }
+
+    /* Hide default horizontal menu */
+    .menu-links {
+        display: none; /* Hidden by default until triggered */
+        flex-direction: column;
+        background-color: rgba(0, 128, 128, 0.95);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        padding: 2rem 0;
+        text-align: center;
+        z-index: 1000;
+    }
+
+    /* Display the dropdown menu when .show is added */
+    .menu-links.show {
+        display: flex;
+    }
+
+    /* Center links in dropdown */
+    .menu-links li {
+        width: 100%;
+    }
+    
+    .menu-links li a {
+        display: block;
+        width: 100%;
+        padding: 1rem 0;
+        color: white;
+        font-size: 1.5rem;
+    }
+}

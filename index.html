@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RentalCar</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Background Video -->
+    <div class="videoFondo">
+        <video autoplay muted loop>
+            <source src="Recursos/VIDEOS/video1.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav>
+        <div class="nav1">
+            <img src="Recursos/IMG/logo.png" alt="Logo de RentalCar">
+        </div>
+        <div class="nav2">
+            <i class="fas fa-desktop" onclick="switchMode('desktop')"></i>
+            <i class="fas fa-tablet-alt" onclick="switchMode('tablet')"></i>
+            <i class="fas fa-mobile-alt" onclick="switchMode('mobile')"></i>
+        </div>
+        <div class="nav3">
+            <!-- Burger menu icon that toggles dropdown menu -->
+            <div id="menu-icon" class="menu-icon" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <!-- Dropdown menu links -->
+            <ul class="menu-links">
+                <li><a href="#seccion_inicio" onclick="closeMenu()">Inicio</a></li>
+                <li><a href="#seccion_funciones" onclick="closeMenu()">Funciones</a></li>
+                <li><a href="#seccion_descargas" onclick="closeMenu()">Descargas</a></li>
+                <li><a href="#seccion_comentarios" onclick="closeMenu()">Comentarios</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Content Sections -->
+    <section id="seccion_inicio">
+        <h1>RentalCar</h1>
+        <p>La APP ideal para alquilar y gestionar tu vehículo estés donde estés.</p>
+        <div class="download-buttons">
+            <button>Google Play</button>
+            <button>Apple Store</button>
+        </div>
+    </section>
+
+    <section id="seccion_funciones">
+        <h2>Funciones</h2>
+        <p>Descripción de las funciones de la app.</p>
+    </section>
+
+    <section id="seccion_descargas">
+        <h2>Descargas</h2>
+        <p>Enlaces para descargar la app.</p>
+    </section>
+
+    <section id="seccion_comentarios">
+        <h2>Comentarios</h2>
+        <p>Comentarios de usuarios.</p>
+    </section>
+</body>
+</html>
